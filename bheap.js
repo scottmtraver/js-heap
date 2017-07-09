@@ -93,9 +93,18 @@ function Heap () {
 
 //try it out!
 var heapTest = new Heap();
-for(var i = 1; i < 100; i ++) {
-  heapTest.push(i);
+for(var i = 1; i < 5000000; i++) {
+  var num = Math.floor(Math.random() * (1000000 - 1)) + 1;
+  heapTest.push(num)
 }
-for(var i = 1; i < 100; i ++) {
-  console.log(heapTest.pop());
+
+//console.log(heapTest.array.slice(0, 25));
+
+var test = heapTest.pop();
+var count = 0;
+while (test == 1) {
+  console.log(test);
+  test = heapTest.pop();
+  count++;
 }
+console.log('There were ' + count + ' 1s generated');
